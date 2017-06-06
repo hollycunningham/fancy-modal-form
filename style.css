@@ -1,0 +1,19 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.viewport {
+	height: 100%;
+	overflow: auto;
+}
+
+.content {
+	background: cadetblue;
+}
+
+input {
+	display: block;
+	font-size: 1.8em;
+	margin: 0 auto 20px;
+}
