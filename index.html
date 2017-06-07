@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Javascript Center</title>
+	<title>Fancy Modal Form</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<main>
-		<h2>Here's the main content</h2>
+		<h2>Fancy Modal Form</h2>
+		<p>This page, which utilizes jQuery, demonstrates a form:
+			<ul>
+				<li>inside a modal window</li>
+				<li>with automatic vertical centering on the focused field</li>
+				<li>field labels that behave as placeholders</li>
+			</ul>
+		</p>
+		<p>To-Do:
+			<ul>
+				<li>Add a dropdown field</li>
+			</ul>
+		</p>
 		<button>Open form</button>
 	</main>
-	<div class="viewport">
+	<div class="modal">
 		<div class="content">
 			<form>
-				<div class="input-wrap">
-					<input id="name" name="name" type="text"/>
-					<label for="name">Name</label>
+				<div class="input-row">
+					<div class="input-wrap">
+						<input id="name" name="name" type="text"/>
+						<label for="name">Name</label>
+					</div>
 				</div>
-				<div class="input-wrap">
-					<input id="address" name="address" type="text" />
-					<label for="address">Address</label>
+				<div class="input-row">
+					<div class="input-wrap">
+						<input id="address" name="address" type="text" />
+						<label for="address">Address</label>
+					</div>
 				</div>
-				<div class="input-wrap">
-					<input id="city" name="city" type="text"/>
-					<label for="city">City</label>
+				<div class="input-row">
+					<div class="input-wrap">
+						<input id="city" name="city" type="text"/>
+						<label for="city">City</label>
+					</div>
 				</div>
-				<div class="input-wrap">
-					<input id="country" name="country" type="country"/>
-					<label for="country">Country</label>
+				<div class="input-row">
+					<div class="input-wrap">
+						<input id="country" name="country" type="text"/>
+						<label for="country">Country</label>
+					</div>
 				</div>
+				<input type="submit" value="Submit">
 			</form>
 		</div>
-		<a href="" class="close">x</a>
+		<a href="" class="close">&#x2716;</a>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="script.js" type="text/javascript"></script>

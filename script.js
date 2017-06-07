@@ -5,38 +5,35 @@ var halfHeight = $( window ).height() / 2;
 $('.content').css({'padding-top': halfHeight, 'padding-bottom': halfHeight});
 
 $(function() {
-	function updateText(event){
-	  var input=$(this);
-	  setTimeout(function(){
-	    var val=input.val();
-	    if(val!="")
-	      input.parent().addClass("float");
-	    else
-	      input.parent().removeClass("float");
-	  },1)
-	}
 	$(".input-wrap input").keydown(updateText);
 	$(".input-wrap input").change(updateText);
 });
 
+function updateText(event){
+	var input = $(this);
+	setTimeout(function(){
+		var val = input.val();
+		if(val !== "") {
+			input.parent().addClass("float");
+		} else {
+			input.parent().removeClass("float");
+		}
+	}, 1);
+}
+
 $('input').focus(function(){
-	inputPosition = $(this).position().top;
-	finalPosition = inputPosition - halfHeight + scrollPosition; // OMFG
-	$('.viewport').animate({ scrollTop: finalPosition }, 100);
+	inputPosition = $(this).closest('.input-wrap').position().top;
+	finalPosition = inputPosition - halfHeight + scrollPosition;
+	$('.modal').animate({ scrollTop: finalPosition }, 100);
 });
 
-$('.viewport').scroll(function() {
-	scrollPosition = $('.viewport').scrollTop();
+$('.modal').scroll(function() {
+	scrollPosition = $('.modal').scrollTop();
 });
 
-$('button').click(function(){
-	$('.viewport').show();
-	$('body').addClass('modalOpen');
-	$('input').first().focus();
-});
-
-$('a.close').click(function(e){
+$('button, a.close').click(function(e){
 	e.preventDefault();
-	$('.viewport').hide();
-	$('body').removeClass('modalOpen');
+	$('.modal').toggle();
+	$('body').toggleClass('modalOpen');
+	$('input').first().focus();
 });
